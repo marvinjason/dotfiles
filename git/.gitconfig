@@ -1,6 +1,8 @@
 [user]
 	email = marvinjason.sy@gmail.com
 	name = marvinjason
+[push]
+	default = simple
 [alias]
 	co = checkout
 	st = status
