@@ -1,0 +1,7 @@
+[user]
+	email = marvinjason.sy@gmail.com
+	name = marvinjason
+[alias]
+	co = checkout
+	st = status
+	cm = commit
