@@ -11,6 +11,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'sharkdp/fd'
 
 call plug#end()
 
@@ -19,3 +20,4 @@ map <C-n> :NERDTreeToggle<CR>
 
 " fzf config
 nnoremap <C-p> :Files<CR>
+let $FZF_DEFAULT_COMMAND = "fd --type file --hidden --no-ignore --exclude '{.git,node_modules,vendor,build,tmp}'"
