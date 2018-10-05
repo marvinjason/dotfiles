@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+set -e
+echo "Setting everything up..."
+
+# Install fd if not present
+STATUS=$(dpkg-query -W -f='${Status}' fd-musl | grep "install ok installed")
+
+if [ "" == "$STATUS" ]; then
+  TEMP_DEB="$(mktemp)" &&
+  wget -O "$TEMP_DEB" 'https://github.com/sharkdp/fd/releases/download/v7.1.0/fd-musl_7.1.0_amd64.deb' &&
+  sudo dpkg -i "$TEMP_DEB"
+  rm -f "$TEMP_DEB"
+fi
+
+# Create symlinks
+ln -sf "$(pwd)/tmux/.tmux.conf" ~
+ln -sf "$(pwd)/vim/.vimrc" ~
+ln -sf "$(pwd)/git/.gitconfig" ~
+
+echo "Done!"
+echo "Don't forget to PlugInstall!"
