@@ -19,4 +19,4 @@ ln -sf "$(pwd)/vim/.vimrc" ~
 ln -sf "$(pwd)/git/.gitconfig" ~
 
 echo "Done!"
-echo "Don't forget to PlugInstall!"
+echo "Don't forget to PlugInstall and source!"
