@@ -7,3 +7,4 @@
 	co = checkout
 	st = status
 	cm = commit
+	b  = branch
