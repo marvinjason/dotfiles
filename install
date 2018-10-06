@@ -3,6 +3,15 @@
 set -e
 echo "Setting everything up..."
 
+# Install zsh
+sudo apt-get -y install zsh
+
+# Install oh-my-zsh
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+# Change default shell to zsh
+chsh -s /bin/zsh
+
 # Install fd if not present
 STATUS=$(dpkg-query -W -f='${Status}' fd-musl | grep "install ok installed")
 
@@ -17,6 +26,8 @@ fi
 ln -sf "$(pwd)/tmux/.tmux.conf" ~
 ln -sf "$(pwd)/vim/.vimrc" ~
 ln -sf "$(pwd)/git/.gitconfig" ~
+ln -sf "$(pwd)/zsh/.zshrc" ~
 
 echo "Done!"
-echo "Don't forget to PlugInstall and source!"
+echo "Don't forget to re-login to reflect all changes."
+echo "You might need to PlugInstall and source as well!"
