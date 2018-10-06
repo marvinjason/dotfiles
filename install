@@ -6,8 +6,10 @@ echo "Setting everything up..."
 # Install zsh
 sudo apt-get -y install zsh
 
-# Install oh-my-zsh
-git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+# Install oh-my-zsh if not present
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+  git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
 
 # Change default shell to zsh
 chsh -s /bin/zsh
@@ -27,6 +29,7 @@ ln -sf "$(pwd)/tmux/.tmux.conf" ~
 ln -sf "$(pwd)/vim/.vimrc" ~
 ln -sf "$(pwd)/git/.gitconfig" ~
 ln -sf "$(pwd)/zsh/.zshrc" ~
+ln -sf "$(pwd)/zsh/.aliases" ~
 
 echo "Done!"
 echo "Don't forget to re-login to reflect all changes."

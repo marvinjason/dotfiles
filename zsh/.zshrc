@@ -96,3 +96,10 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# Helper function to source files if present
+include () {
+  [[ -f "$1" ]] && source "$1"
+}
+
+include .aliases
