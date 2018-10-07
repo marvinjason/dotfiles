@@ -1,7 +1,13 @@
 #!/usr/bin/env bash
 
+# Halt when error occurs
 set -e
-echo "Setting everything up..."
+
+# Set green and no-color
+C='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${C}Setting everything up...${NC}"
 
 # Install zsh
 sudo apt-get -y install zsh
@@ -31,6 +37,6 @@ ln -sf "$(pwd)/git/.gitconfig" ~
 ln -sf "$(pwd)/zsh/.zshrc" ~
 ln -sf "$(pwd)/zsh/.aliases" ~
 
-echo "Done!"
+echo -e "${C}Done!"
 echo "Don't forget to re-login to reflect all changes."
-echo "You might need to PlugInstall and source as well!"
+echo -e "You might need to PlugInstall and source as well!${NC}"
