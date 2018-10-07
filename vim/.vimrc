@@ -25,3 +25,6 @@ map <C-n> :NERDTreeToggle<CR>
 " fzf config
 nnoremap <C-p> :Files<CR>
 let $FZF_DEFAULT_COMMAND = "fd --type file --hidden --no-ignore --exclude '{.git,node_modules,vendor,build,tmp}'"
+
+" silversearcher-ag config
+nnoremap <C-f> :Ag<Space>

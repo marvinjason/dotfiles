@@ -30,6 +30,9 @@ if [ "" == "$STATUS" ]; then
   rm -f "$TEMP_DEB"
 fi
 
+# Install silversearcher-ag
+sudo apt-get -y install silversearcher-ag
+
 # Create symlinks
 ln -sf "$(pwd)/tmux/.tmux.conf" ~
 ln -sf "$(pwd)/vim/.vimrc" ~
