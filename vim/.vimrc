@@ -12,6 +12,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'sharkdp/fd'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
