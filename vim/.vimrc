@@ -16,6 +16,9 @@ Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
+" vim config
+set number
+
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
 
