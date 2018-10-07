@@ -17,7 +17,18 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " vim config
+set expandtab
+set hidden
+set list
+set listchars=tab:»·
+set listchars+=trail:·
+set listchars+=extends:»
+set listchars+=precedes:«
+set noswapfile
+set nowrap
 set number
+set shiftwidth=2
+set tabstop=2
 
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
