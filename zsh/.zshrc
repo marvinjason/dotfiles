@@ -103,3 +103,4 @@ include () {
 }
 
 include .aliases
+include .init
