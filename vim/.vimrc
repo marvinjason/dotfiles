@@ -14,17 +14,20 @@ Plug 'junegunn/fzf.vim'
 Plug 'sharkdp/fd'
 Plug 'tpope/vim-fugitive'
 Plug 'joshdick/onedark.vim'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
 " vim config
 set expandtab
 set hidden
+set laststatus=2 " Required for lightline.vim
 set list
 set listchars=tab:»·
 set listchars+=trail:·
 set listchars+=extends:»
 set listchars+=precedes:«
+set noshowmode
 set noswapfile
 set nowrap
 set number
