@@ -21,18 +21,21 @@ call plug#end()
 " vim config
 set expandtab
 set hidden
-set laststatus=2 " Required for lightline.vim
 set list
 set listchars=tab:»·
 set listchars+=trail:·
 set listchars+=extends:»
 set listchars+=precedes:«
-set noshowmode
 set noswapfile
 set nowrap
 set number
 set shiftwidth=2
 set tabstop=2
+
+" lightline.vim config
+set laststatus=2
+set noshowmode
+"let g:lightline = {'colorscheme': 'onedark'}
 
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
