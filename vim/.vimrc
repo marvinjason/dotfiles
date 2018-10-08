@@ -19,6 +19,7 @@ Plug 'itchyny/lightline.vim'
 call plug#end()
 
 " vim config
+set cursorline " Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
 set expandtab
 set hidden
 set list
