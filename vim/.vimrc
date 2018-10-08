@@ -33,6 +33,12 @@ set number
 set shiftwidth=2
 set tabstop=2
 
+" vim window navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
 " lightline.vim config
 set laststatus=2
 set noshowmode
