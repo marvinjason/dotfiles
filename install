@@ -20,25 +20,22 @@ fi
 # Change default shell to zsh
 chsh -s /bin/zsh
 
-# Install fd if not present
-STATUS=$(dpkg-query -W -f='${Status}' fd-musl | grep "install ok installed")
-
-if [ "" == "$STATUS" ]; then
-  TEMP_DEB="$(mktemp)" &&
-  wget -O "$TEMP_DEB" 'https://github.com/sharkdp/fd/releases/download/v7.1.0/fd-musl_7.1.0_amd64.deb' &&
-  sudo dpkg -i "$TEMP_DEB"
-  rm -f "$TEMP_DEB"
-fi
+# Install fd
+TEMP_DEB="$(mktemp)" &&
+wget -O "$TEMP_DEB" 'https://github.com/sharkdp/fd/releases/download/v7.1.0/fd-musl_7.1.0_amd64.deb' &&
+sudo dpkg -i "$TEMP_DEB"
+rm -f "$TEMP_DEB"
 
 # Install silversearcher-ag
 sudo apt-get -y install silversearcher-ag
 
 # Install universal-ctags
 if [ ! -d "$HOME/.ctags" ]; then
-  git clone https://github.com/universal-ctags/ctags.git ~/.ctags
-  ~/.ctags/autogen.sh
-  ~/.ctags/configure
-  ~/.ctags/make && ~/.ctags/make install
+  git clone https://github.com/universal-ctags/ctags.git ~/.ctags &&
+  ~/.ctags/autogen.sh &&
+  ~/.ctags/configure &&
+  make -C ~/.ctags &&
+  make install -C ~/.ctags
 fi
 
 # Create symlinks

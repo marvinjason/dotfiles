@@ -17,7 +17,10 @@ sudo apt-get -y remove silversearcher-ag
 
 # Remove universal-ctags
 if [ -d "$HOME/.ctags" ]; then
-  ~/.ctags/make uninstall
+  # Apparently, this command is not a thing.
+  # Maybe nuking the directory is enough?
+  #
+  # make uninstall -C ~/.ctags
   rm ~/.ctags -rf
 fi
 
