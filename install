@@ -33,14 +33,24 @@ fi
 # Install silversearcher-ag
 sudo apt-get -y install silversearcher-ag
 
+# Install universal-ctags
+if [ ! -d "$HOME/.ctags" ]; then
+  git clone https://github.com/universal-ctags/ctags.git ~/.ctags
+  ~/.ctags/autogen.sh
+  ~/.ctags/configure
+  make && make install
+fi
+
 # Create symlinks
 ln -sf "$(pwd)/tmux/.tmux.conf" ~
 ln -sf "$(pwd)/vim/.vimrc" ~
 ln -sf "$(pwd)/git/.gitconfig" ~
+ln -sf "$(pwd)/git/.gitignore_global" ~
 ln -sf "$(pwd)/zsh/.zshrc" ~
 ln -sf "$(pwd)/zsh/.aliases" ~
 ln -sf "$(pwd)/zsh/.init" ~
 
 echo -e "${C}Done!"
 echo "Don't forget to re-login to reflect all changes."
-echo -e "You might need to PlugInstall and source as well!${NC}"
+echo "You might need to source and PlugInstall as well."
+echo -e "P.S. Generate ctags for individual projects${NC}"

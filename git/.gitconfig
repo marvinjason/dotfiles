@@ -8,3 +8,5 @@
 	st = status
 	cm = commit
 	b  = branch
+[core]
+	excludesfile = ~/.gitignore_global
