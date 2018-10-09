@@ -1,0 +1,53 @@
+#!/usr/bin/env bash
+
+# Halt when error occurs
+set -e
+
+# Set green and no-color
+C='\033[0;32m'
+NC='\033[0m'
+
+echo -e "${C}Removing everything...${NC}"
+
+# Remove zsh
+sudo apt-get -y remove zsh
+
+# Remove oh-my-zsh if present
+if [ -d "$HOME/.oh-my-zsh" ]; then
+  rm ~/.oh-my-zsh -rf
+fi
+
+# Change default shell to bash
+chsh -s /bin/bash
+
+# Remove fd if present
+STATUS=$(dpkg-query -W -f='${Status}' fd-musl | grep "install ok installed")
+
+if [ "" != "$STATUS" ]; then
+  sudo dpkg --remove fd-musl
+fi
+
+# Remove silversearcher-ag
+sudo apt-get -y remove silversearcher-ag
+
+# Remove universal-ctags
+if [ -d "$HOME/.ctags" ]; then
+  ~/.ctags/make uninstall
+  rm ~/.ctags -rf
+fi
+
+# Delete symlinks
+rm ~/.tmux.conf
+rm ~/.vimrc
+rm ~/.gitconfig
+rm ~/.gitignore_global
+rm ~/.zshrc
+rm ~/.aliases
+rm ~/.init
+
+# Remove vim plugins
+rm ~/.vim -rf
+
+echo -e "${C}Done!"
+echo "Don't forget to re-login to reflect all changes."
+echo -e "P.S. Remove ctags under affected projects${NC}"
