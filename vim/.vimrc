@@ -22,6 +22,7 @@ call plug#end()
 set cursorline " Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
 set expandtab
 set hidden
+set hlsearch
 set list
 set listchars=tab:»·
 set listchars+=trail:·
@@ -56,6 +57,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Hide highlighting of current search results
+nnoremap <silent> <CR> :nohlsearch<CR>
 
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
