@@ -46,6 +46,10 @@ let g:lightline = {
       \   'left': [ [ 'paste', 'gitbranch' ],
       \             [ 'readonly', 'filepath', 'modified' ] ]
       \ },
+      \ 'inactive': {
+      \   'left': [ [ 'paste', 'gitbranch' ],
+      \             [ 'readonly', 'filepath', 'modified' ] ]
+      \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
       \   'filepath': 'FilePath'
