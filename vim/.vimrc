@@ -24,6 +24,7 @@ set cursorline " Need to use vim 8.1+ because https://github.com/vim/vim/issues/
 set expandtab
 set hidden
 set hlsearch
+set incsearch
 set list
 set listchars=tab:»·
 set listchars+=trail:·
