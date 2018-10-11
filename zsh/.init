@@ -3,3 +3,15 @@
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   exec tmux
 fi
+
+# Yanked from ~/.bashrc
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+alias laravel='~/.config/composer/vendor/bin/laravel'
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+export PATH="/home/marvinjason/.rbenv/plugins/ruby-build/bin:/home/marvinjason/.rbenv/shims:/home/marvinjason/.rbenv/bin:/home/marvinjason/.nvm/versions/node/v9.9.0/bin:/home/marvinjason/.rbenv/plugins/ruby-build/bin:/home/marvinjason/.rbenv/shims:/home/marvinjason/.rbenv/bin:/home/marvinjason/bin:/home/marvinjason/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/marvinjason/.vimpkg/bin"
