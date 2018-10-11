@@ -15,6 +15,7 @@ Plug 'sharkdp/fd'
 Plug 'tpope/vim-fugitive'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'andymass/vim-matchup'
 
 call plug#end()
 
@@ -97,3 +98,9 @@ endif
 
 syntax on
 colorscheme onedark
+
+" vim-matchup config
+let g:matchup_matchparen_deferred = 1
+let g:matchup_matchparen_hi_surround_always = 1
+
+hi MatchParen ctermfg=green
