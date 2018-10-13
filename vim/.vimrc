@@ -105,7 +105,7 @@ colorscheme onedark
 let g:matchup_matchparen_deferred = 1
 let g:matchup_matchparen_hi_surround_always = 1
 
-hi MatchParen ctermfg=green
+hi MatchParen ctermfg=11
 
 " Set vim's bg to transparent so that it adapts to
 " current terminal's bg color.
