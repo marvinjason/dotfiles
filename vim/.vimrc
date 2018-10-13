@@ -73,6 +73,7 @@ map <C-n> :NERDTreeToggle<CR>
 " fzf config
 nnoremap <C-p> :Files<CR>
 let $FZF_DEFAULT_COMMAND = "fd --type file --hidden --no-ignore --exclude '{.git,node_modules,vendor,build,tmp}'"
+let $FZF_DEFAULT_OPTS = "--color bg+:-1"
 
 " silversearcher-ag config
 nnoremap <C-f> :Ag<Space>
@@ -105,3 +106,7 @@ let g:matchup_matchparen_deferred = 1
 let g:matchup_matchparen_hi_surround_always = 1
 
 hi MatchParen ctermfg=green
+
+" Set vim's bg to transparent so that it adapts to
+" current terminal's bg color.
+hi normal ctermbg=NONE
