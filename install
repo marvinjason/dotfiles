@@ -50,4 +50,5 @@ ln -sf "$(pwd)/zsh/.init" ~
 echo -e "${C}Done!"
 echo "Don't forget to re-login to reflect all changes."
 echo "You might need to source and PlugInstall as well."
+echo "To use intended colors, change the terminal's text color to #ABB2BF and background color to #262626."
 echo -e "P.S. Generate ctags for individual projects${NC}"
