@@ -16,6 +16,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'andymass/vim-matchup'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
@@ -158,3 +159,7 @@ endfunction
 command! BTags call s:btags()
 
 nnoremap <C-b> :BTags<CR>
+
+" nerdcommenter config
+" Toggle comments using ctrl+/
+map <C-_> <Plug>NERDCommenterToggle
