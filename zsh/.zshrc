@@ -102,5 +102,5 @@ include () {
   [[ -f "$1" ]] && source "$1"
 }
 
-include .aliases
-include .init
+include ~/.aliases
+include ~/.init
