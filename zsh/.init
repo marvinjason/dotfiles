@@ -4,19 +4,28 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   exec tmux
 fi
 
+PATH+=":bin"
+PATH+=":sbin"
+PATH+=":usr/bin"
+PATH+=":usr/games"
+PATH+=":usr/sbin"
+PATH+=":usr/local/bin"
+PATH+=":usr/local/games"
+PATH+=":usr/local/sbin"
+PATH+=":snap/bin"
+PATH+=":$HOME/bin"
+PATH+=":$HOME/.local/bin"
+PATH+=":$HOME/.vimpkg/bin"
+PATH+=":$HOME/.rbenv/bin"
+PATH+=":$HOME/.rbenv/shims"
+PATH+=":$HOME/.rbenv/plugins/ruby-build/bin"
+PATH+=":$HOME/.nvm/versions/node/v9.9.0/bin"
+export PATH
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# NOTE: Comment either this block or the other one to avoid conflicts.
-# Yanked from ~/.bash_profile (for laptop) - START
-[[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-# END
 
-# Yanked from ~/.bashrc (for VMware) - START
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-export PATH="/home/marvinjason/.rbenv/plugins/ruby-build/bin:/home/marvinjason/.rbenv/shims:/home/marvinjason/.rbenv/bin:/home/marvinjason/.nvm/versions/node/v9.9.0/bin:/home/marvinjason/.rbenv/plugins/ruby-build/bin:/home/marvinjason/.rbenv/shims:/home/marvinjason/.rbenv/bin:/home/marvinjason/bin:/home/marvinjason/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/marvinjason/.vimpkg/bin"
-# END
+[[ -s "$HOME/.rbenv/bin/rbenv" ]] && eval "$(rbenv init -)"
