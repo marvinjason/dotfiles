@@ -4,6 +4,7 @@ if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] &&
   exec tmux
 fi
 
+# Beware of path order
 PATH+=":bin"
 PATH+=":sbin"
 PATH+=":usr/bin"
@@ -19,13 +20,13 @@ PATH+=":$HOME/.vimpkg/bin"
 PATH+=":$HOME/.rbenv/bin"
 PATH+=":$HOME/.rbenv/shims"
 PATH+=":$HOME/.rbenv/plugins/ruby-build/bin"
-PATH+=":$HOME/.nvm/versions/node/v9.9.0/bin"
+PATH+=":$HOME/.nvm/versions/node/v9.9.0/bin" # Note the version - you might still need to `nvm install` this.
 export PATH
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
+# Load ruby manager depending on what's currently installed.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.rbenv/bin/rbenv" ]] && eval "$(rbenv init -)"
