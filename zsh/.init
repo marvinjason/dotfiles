@@ -6,7 +6,6 @@ fi
 
 PATH+=":$HOME/.rbenv/bin"
 PATH+=":$HOME/.rbenv/plugins/ruby-build/bin"
-PATH+=":$HOME/.nvm/versions/node/v9.9.0/bin" # Note the version - you might still need to `nvm install` this.
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
