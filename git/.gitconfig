@@ -11,3 +11,4 @@
   l  = log --abbrev-commit
 [core]
 	excludesfile = ~/.gitignore_global
+	editor = vim
