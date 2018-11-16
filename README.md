@@ -5,6 +5,14 @@ Make sure you have vim 8.1+ installed. There is an issue with scolling performan
 To build from source:
 
 ```sh
+# You need a few stuff to build from source
+
+sudo apt-get install ncurses
+sudo apt-get install automake
+sudo apt-get install libevent-dev # specific to Ubuntu 16.04
+```
+
+```sh
 git clone https://github.com/vim/vim.git
 cd vim/src
 make
@@ -16,6 +24,7 @@ You also need to install the latest tmux:
 ```sh
 git clone https://github.com/tmux/tmux.git
 cd tmux
+sh autogen.sh
 ./configure && make
 sudo make install
 ```
