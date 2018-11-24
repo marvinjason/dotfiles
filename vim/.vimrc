@@ -69,6 +69,9 @@ nnoremap <C-l> <C-w>l
 " Hide highlighting of current search results
 nnoremap <silent> <CR> :nohlsearch<CR>
 
+" Open current file in default application
+nnoremap <C-z> :!xdg-open %
+
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
 
