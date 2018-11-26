@@ -8,15 +8,16 @@ endif
 " vim-plug plugins go in here
 call plug#begin('~/.vim/plugged')
 
-Plug 'scrooloose/nerdtree'
+Plug 'andymass/vim-matchup'
+Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'sharkdp/fd'
-Plug 'tpope/vim-fugitive'
-Plug 'joshdick/onedark.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'andymass/vim-matchup'
-Plug 'scrooloose/nerdcommenter'
+"Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
+Plug 'sharkdp/fd'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
 
@@ -166,4 +167,6 @@ nnoremap <C-b> :BTags<CR>
 
 " nerdcommenter config
 " Toggle comments using ctrl+/
-map <C-_> <Plug>NERDCommenterToggle
+" Note: macOS not recognizing this binding probably because
+" it doesn't treat ctrl+_ as ctrl+/
+"map <C-_> <Plug>NERDCommenterToggle
