@@ -9,7 +9,11 @@ To build from source:
 
 sudo apt-get install ncurses
 sudo apt-get install automake
-sudo apt-get install libevent-dev # specific to Ubuntu 16.04
+sudo apt-get install libevent-dev
+
+# Needed to enable xterm_clipboard feature in vim
+# Might need a few other stuff here
+sudo apt-get install xorg-dev
 ```
 
 ```sh

@@ -23,6 +23,7 @@ call plug#end()
 
 " vim config
 set backspace=indent,eol,start
+set clipboard=unnamedplus " need +xterm_clipboard feature enabled in vim
 set cursorline " Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
 set expandtab
 set hidden
