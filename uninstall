@@ -21,20 +21,25 @@ if [ -d "$HOME/.ctags" ]; then
   # Maybe nuking the directory is enough?
   #
   # make uninstall -C ~/.ctags
-  rm ~/.ctags -rf
+  rm -rf ~/.ctags
 fi
 
 # Delete symlinks
-rm ~/.tmux.conf -f
-rm ~/.vimrc -f
-rm ~/.gitconfig -f
-rm ~/.gitignore_global -f
-rm ~/.zshrc -f
-rm ~/.aliases -f
-rm ~/.init -f
+rm -f ~/.tmux.conf
+rm -f ~/.vimrc
+rm -f ~/.gitconfig
+rm -f ~/.gitignore_global
+rm -f ~/.zshrc
+rm -f ~/.aliases
+rm -f ~/.init
 
 # Remove vim plugins
-rm ~/.vim -rf
+rm -rf ~/.vim
+
+# Remove fzf
+rm -f ~/.fzf.bash
+rm -f ~/.fzf.zsh
+rm -rf ~/.fzf
 
 # Remove oh-my-zsh if present
 if [ -d "$HOME/.oh-my-zsh" ]; then

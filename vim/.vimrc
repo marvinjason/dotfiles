@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'andymass/vim-matchup'
 Plug 'joshdick/onedark.vim'
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
 "Plug 'scrooloose/nerdcommenter'

@@ -14,3 +14,5 @@ export NVM_DIR="$HOME/.nvm"
 # Load ruby manager depending on what's currently installed.
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 [[ -s "$HOME/.rbenv/bin/rbenv" ]] && eval "$(rbenv init -)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
