@@ -9,8 +9,40 @@ NC='\033[0m'
 
 echo -e "${C}Setting everything up...${NC}"
 
-# Install zsh
-sudo apt-get -y install zsh
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  # Install zsh
+  sudo apt-get -y install zsh
+
+  # Install fd
+  TEMP_DEB="$(mktemp)" &&
+  wget -O "$TEMP_DEB" 'https://github.com/sharkdp/fd/releases/download/v7.1.0/fd-musl_7.1.0_amd64.deb' &&
+  sudo dpkg -i "$TEMP_DEB"
+  rm -f "$TEMP_DEB"
+
+  # Install silversearcher-ag
+  sudo apt-get -y install silversearcher-ag
+
+  # Install universal-ctags
+  if [ ! -d "$HOME/.ctags" ]; then
+    git clone https://github.com/universal-ctags/ctags.git ~/.ctags &&
+    ~/.ctags/autogen.sh &&
+    ~/.ctags/configure &&
+    make -C ~/.ctags &&
+    make install -C ~/.ctags
+  fi
+elif [[ "$OSTYPE" == "darwin"*  ]]; then
+  # Install zsh
+  brew install zsh
+
+  # Install fd
+  brew install fd
+
+  # Install silversearcher-ag
+  brew install the_silver_searcher
+
+  # Install ctags
+  brew install ctags
+fi
 
 # Install oh-my-zsh if not present
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
@@ -19,24 +51,6 @@ fi
 
 # Change default shell to zsh
 chsh -s /bin/zsh
-
-# Install fd
-TEMP_DEB="$(mktemp)" &&
-wget -O "$TEMP_DEB" 'https://github.com/sharkdp/fd/releases/download/v7.1.0/fd-musl_7.1.0_amd64.deb' &&
-sudo dpkg -i "$TEMP_DEB"
-rm -f "$TEMP_DEB"
-
-# Install silversearcher-ag
-sudo apt-get -y install silversearcher-ag
-
-# Install universal-ctags
-if [ ! -d "$HOME/.ctags" ]; then
-  git clone https://github.com/universal-ctags/ctags.git ~/.ctags &&
-  ~/.ctags/autogen.sh &&
-  ~/.ctags/configure &&
-  make -C ~/.ctags &&
-  make install -C ~/.ctags
-fi
 
 # Create symlinks
 ln -sf "$(pwd)/tmux/.tmux.conf" ~
