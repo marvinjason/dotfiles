@@ -13,7 +13,6 @@ Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'itchyny/lightline.vim'
-"Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'sharkdp/fd'
 Plug 'tpope/vim-commentary'
@@ -168,9 +167,3 @@ endfunction
 command! BTags call s:btags()
 
 nnoremap <C-b> :BTags<CR>
-
-" nerdcommenter config
-" Toggle comments using ctrl+/
-" Note: macOS not recognizing this binding probably because
-" it doesn't treat ctrl+_ as ctrl+/
-"map <C-_> <Plug>NERDCommenterToggle
