@@ -8,7 +8,7 @@ endif
 " vim-plug plugins go in here
 call plug#begin('~/.vim/plugged')
 
-Plug 'andymass/vim-matchup'
+" Plug 'andymass/vim-matchup'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -24,7 +24,7 @@ call plug#end()
 set backspace=indent,eol,start
 set clipboard=unnamedplus " need +xterm_clipboard feature enabled in vim
 "set clipboard=unnamed " use this for macOS
-set cursorline " Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
+" set cursorline " Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
 set expandtab
 set hidden
 set hlsearch
