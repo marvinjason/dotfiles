@@ -18,5 +18,10 @@ export NVM_DIR="$HOME/.nvm"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export EDITOR="vim"
+
+# Set UTF-8 for tmux so it displays oh-my-zsh's arrow properly
 export LC_ALL="en_IN.UTF-8"
 export LANG="en_IN.UTF-8"
+
+# Fixes font size issue with alacritty for some devices
+# export WINIT_HIDPI_FACTOR="1.0"
