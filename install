@@ -10,7 +10,6 @@ NC='\033[0m'
 echo -e "${C}Setting everything up...${NC}"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  # Install zsh
   sudo apt-get -y install zsh
 
   # Install fd
@@ -19,7 +18,6 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo dpkg -i "$TEMP_DEB"
   rm -f "$TEMP_DEB"
 
-  # Install silversearcher-ag
   sudo apt-get -y install silversearcher-ag
 
   # Install universal-ctags
@@ -31,16 +29,9 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     make install -C ~/.ctags
   fi
 elif [[ "$OSTYPE" == "darwin"*  ]]; then
-  # Install zsh
   brew install zsh
-
-  # Install fd
   brew install fd
-
-  # Install silversearcher-ag
   brew install the_silver_searcher
-
-  # Install ctags
   brew install ctags
 fi
 

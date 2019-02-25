@@ -1,8 +1,8 @@
 ## Prerequisites
 
-Make sure you have vim 8.1+ installed. There is an issue with scolling performance when cursorline is enabled for lower versions.
+Make sure you have vim and tmux installed. If you are going to enable cursorline, make sure you have vim 8.1+ installed. There is an issue with scolling performance when cursorline is enabled for lower versions.
 
-To build from source:
+To build vim from source in Ubuntu:
 
 ```sh
 # You need a few stuff to build from source
@@ -33,6 +33,8 @@ sh autogen.sh
 sudo make install
 ```
 
+**Note**: If you're planning on using tmuxinator, you might want to check the list of compatible tmux versions first.
+
 ## Installation
 
 To get set up with dotfiles:
@@ -52,4 +54,4 @@ cd ~/.dotfiles
 ./uninstall
 ```
 
-Note: This will remove configurations set up by dotfiles including installed binaries.
+**Note**: This will remove configurations set up by dotfiles including installed binaries.
