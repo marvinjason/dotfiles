@@ -8,7 +8,7 @@ endif
 " vim-plug plugins go in here
 call plug#begin('~/.vim/plugged')
 
-" Plug 'andymass/vim-matchup'
+Plug 'andymass/vim-matchup'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -22,9 +22,17 @@ call plug#end()
 
 " vim config
 set backspace=indent,eol,start
-set clipboard=unnamedplus " need +xterm_clipboard feature enabled in vim
-"set clipboard=unnamed " use this for macOS
-" set cursorline " Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
+
+" need +xterm_clipboard feature enabled in vim
+" use this for ubuntu
+" set clipboard=unnamedplus
+
+" use this for macOS
+set clipboard=unnamed
+
+" Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
+" set cursorline
+
 set expandtab
 set hidden
 set hlsearch
@@ -108,6 +116,7 @@ let g:matchup_matchparen_deferred = 1
 let g:matchup_matchparen_hi_surround_always = 1
 
 hi MatchParen ctermfg=11
+hi MatchParen guifg=darkyellow
 
 " Set vim's bg to transparent so that it adapts to
 " current terminal's bg color.
