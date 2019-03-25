@@ -33,6 +33,7 @@ set clipboard=unnamed
 " Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
 " set cursorline
 
+set encoding=utf-8
 set expandtab
 set hidden
 set hlsearch
