@@ -29,10 +29,21 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
     make install -C ~/.ctags
   fi
 elif [[ "$OSTYPE" == "darwin"*  ]]; then
-  brew install zsh
-  brew install fd
-  brew install the_silver_searcher
-  brew install ctags
+  if ! type "zsh" > /dev/null; then
+    brew install zsh
+  fi
+
+  if ! type "fd" > /dev/null; then
+    brew install fd
+  fi
+
+  if ! type "ag" > /dev/null; then
+    brew install the_silver_searcher
+  fi
+
+  if ! type "ctags" > /dev/null; then
+    brew install ctags
+  fi
 fi
 
 # Install oh-my-zsh if not present
@@ -41,9 +52,11 @@ if [ ! -d "$HOME/.oh-my-zsh" ]; then
 fi
 
 # Change default shell to zsh
-chsh -s /bin/zsh
+if [ "$SHELL" != "/bin/zsh" ]; then
+  chsh -s /bin/zsh
+fi
 
-# Create symlinks
+# Create symlinks (make sure you are in the dotfiles directory when running the install script)
 ln -sf "$(pwd)/tmux/.tmux.conf" ~
 ln -sf "$(pwd)/vim/.vimrc" ~
 ln -sf "$(pwd)/git/.gitconfig" ~
