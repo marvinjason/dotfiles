@@ -9,19 +9,50 @@ NC='\033[0m'
 
 echo -e "${C}Removing everything...${NC}"
 
-# Remove fd
-sudo dpkg --purge fd-musl
+# Change default shell to bash
+if [ "$SHELL" != "/bin/bash" ]; then
+  chsh -s /bin/bash
+fi
 
-# Remove silversearcher-ag
-sudo apt-get -y remove silversearcher-ag
+if [[ "$OSTYPE" == "linux-gnu" ]]; then
+  # Remove zsh
+  sudo apt-get -y remove zsh
 
-# Remove universal-ctags
-if [ -d "$HOME/.ctags" ]; then
-  # Apparently, this command is not a thing.
-  # Maybe nuking the directory is enough?
-  #
-  # make uninstall -C ~/.ctags
-  rm -rf ~/.ctags
+  # Remove fd
+  sudo dpkg --purge fd-musl
+
+  # Remove silversearcher-ag
+  sudo apt-get -y remove silversearcher-ag
+
+  # Remove universal-ctags
+  if [ -d "$HOME/.ctags" ]; then
+    # Apparently, this command is not a thing.
+    # Maybe nuking the directory is enough?
+    #
+    # make uninstall -C ~/.ctags
+    rm -rf ~/.ctags
+  fi
+elif [[ "$OSTYPE" == "darwin"*  ]]; then
+  if type "zsh" > /dev/null; then
+    brew uninstall zsh
+  fi
+
+  if type "fd" > /dev/null; then
+    brew uninstall fd
+  fi
+
+  if type "ag" > /dev/null; then
+    brew uninstall the_silver_searcher
+  fi
+
+  if type "ctags" > /dev/null; then
+    brew uninstall ctags
+  fi
+fi
+
+# Remove oh-my-zsh if present
+if [ -d "$HOME/.oh-my-zsh" ]; then
+  rm ~/.oh-my-zsh -rf
 fi
 
 # Delete symlinks
@@ -40,17 +71,6 @@ rm -rf ~/.vim
 rm -f ~/.fzf.bash
 rm -f ~/.fzf.zsh
 rm -rf ~/.fzf
-
-# Remove oh-my-zsh if present
-if [ -d "$HOME/.oh-my-zsh" ]; then
-  rm ~/.oh-my-zsh -rf
-fi
-
-# Change default shell to bash
-chsh -s /bin/bash
-
-# Remove zsh
-sudo apt-get -y remove zsh
 
 echo -e "${C}Done!"
 echo "Don't forget to re-login to reflect all changes."
