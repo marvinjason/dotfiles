@@ -17,6 +17,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'sharkdp/fd'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-surround'
 
 call plug#end()
 
