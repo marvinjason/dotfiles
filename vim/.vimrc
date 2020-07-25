@@ -19,6 +19,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'sharkdp/fd'
 Plug 'sheerun/vim-polyglot'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 
