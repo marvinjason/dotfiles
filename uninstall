@@ -62,7 +62,6 @@ rm -f ~/.gitconfig
 rm -f ~/.gitignore_global
 rm -f ~/.zshrc
 rm -f ~/.aliases
-rm -f ~/.init
 
 # Remove vim plugins
 rm -rf ~/.vim

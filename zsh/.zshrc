@@ -97,10 +97,19 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+# For commands that need a default editor
+export EDITOR="vim"
+
+# Set UTF-8 for tmux so it displays oh-my-zsh's arrow properly
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+
+# Fixes font size issue with alacritty for some devices
+# export WINIT_HIDPI_FACTOR="1.0"
+
 # Helper function to source files if present
 include () {
   [[ -f "$1" ]] && source "$1"
 }
 
 include ~/.aliases
-include ~/.init
