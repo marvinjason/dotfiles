@@ -9,6 +9,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'andymass/vim-matchup'
+Plug 'dense-analysis/ale'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -176,3 +177,12 @@ endfunction
 command! BTags call s:btags()
 
 nnoremap <C-b> :BTags<CR>
+
+" Configure fixers for ALE
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['prettier'],
+\}
+
+" Bind F8 to fixing problems with ALE
+nnoremap <F8> :ALEFix<CR>
