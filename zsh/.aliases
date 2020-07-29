@@ -1,0 +1,6 @@
+# Monkey patch oh-my-zsh alias
+alias gl='ggpull'
+alias gp='ggpush'
+
+# Custom rails command
+alias rails-kill='kill -9 $(lsof -ti tcp:3000)'
