@@ -186,3 +186,6 @@ let g:ale_fixers = {
 
 " Bind F8 to fixing problems with ALE
 nnoremap <F8> :ALEFix<CR>
+
+" Bind F5 to source vimrc
+nnoremap <F5> :so $MYVIMRC<CR>
