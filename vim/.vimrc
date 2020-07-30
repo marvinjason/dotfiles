@@ -9,6 +9,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'andymass/vim-matchup'
+Plug 'christoomey/vim-system-copy'
 Plug 'dense-analysis/ale'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
@@ -28,9 +29,6 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 set backspace=indent,eol,start
-
-" Needs +clipboard support in vim to work
-set clipboard^=unnamed,unnamedplus
 
 " Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
 " set cursorline
