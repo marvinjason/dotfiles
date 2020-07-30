@@ -27,15 +27,10 @@ Plug 'tpope/vim-surround'
 
 call plug#end()
 
-" vim config
 set backspace=indent,eol,start
 
-" need +xterm_clipboard feature enabled in vim
-" use this for ubuntu
-" set clipboard=unnamedplus
-
-" use this for macOS
-set clipboard=unnamed
+" Needs +clipboard support in vim to work
+set clipboard^=unnamed,unnamedplus
 
 " Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
 " set cursorline
