@@ -23,7 +23,7 @@ make
 sudo make install
 ```
 
-You also need to install the latest tmux:
+You also need to install the latest tmux (or any version above `2.9`):
 
 ```sh
 git clone https://github.com/tmux/tmux.git
