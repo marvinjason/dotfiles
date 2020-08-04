@@ -171,10 +171,14 @@ command! BTags call s:btags()
 
 nnoremap <C-b> :BTags<CR>
 
+" Prepend rubocop linter and fixer with 'bundle exec'
+let g:ale_ruby_rubocop_executable = 'bundle'
+
 " Configure fixers for ALE
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['prettier'],
+\   'javascript': ['eslint'],
+\   'ruby': ['rubocop']
 \}
 
 " Bind F8 to fixing problems with ALE
