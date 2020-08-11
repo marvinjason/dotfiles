@@ -99,9 +99,7 @@ nnoremap <C-p> :Files<CR>
 let $FZF_DEFAULT_COMMAND = "fd --type file --hidden --no-ignore --exclude '{.git,node_modules,vendor,build,tmp,sorbet,flow-typed}'"
 let $FZF_DEFAULT_OPTS = "--color bg+:-1,hl:107,hl+:114,fg:245,fg+:255"
 
-" silversearcher-ag config
-" Override default :Ag to support passing arguments
-autocmd! VimEnter * command! -nargs=* -complete=file Ag :call fzf#vim#ag_raw(<q-args> . ' .')
+" silversearcher config
 nnoremap <C-f> :Ag<Space>
 
 " set up truecolors
