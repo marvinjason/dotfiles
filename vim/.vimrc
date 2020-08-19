@@ -99,8 +99,7 @@ nnoremap <C-p> :Files<CR>
 let $FZF_DEFAULT_COMMAND = "fd --type file --hidden --no-ignore --exclude '{.git,node_modules,vendor,build,tmp,sorbet,flow-typed}'"
 let $FZF_DEFAULT_OPTS = "--color bg+:-1,hl:107,hl+:114,fg:245,fg+:255"
 
-" silversearcher config
-nnoremap <C-f> :Ag<Space>
+nnoremap <C-f> :Rg<Space>
 
 " set up truecolors
 if (has("termguicolors"))

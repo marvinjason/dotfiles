@@ -21,8 +21,8 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   # Remove fd
   sudo dpkg --purge fd-musl
 
-  # Remove silversearcher-ag
-  sudo apt-get -y remove silversearcher-ag
+  # Remove ripgrep
+  sudo apt-get -y remove ripgrep
 
   # Remove universal-ctags
   if [ -d "$HOME/.ctags" ]; then
@@ -41,8 +41,8 @@ elif [[ "$OSTYPE" == "darwin"*  ]]; then
     brew uninstall fd
   fi
 
-  if type "ag" > /dev/null; then
-    brew uninstall the_silver_searcher
+  if type "rg" > /dev/null; then
+    brew uninstall ripgrep
   fi
 
   if type "ctags" > /dev/null; then

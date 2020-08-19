@@ -18,7 +18,7 @@ if [[ "$OSTYPE" == "linux-gnu" ]]; then
   sudo dpkg -i "$TEMP_DEB"
   rm -f "$TEMP_DEB"
 
-  sudo apt-get -y install silversearcher-ag
+  sudo apt-get -y install ripgrep
 
   # Install universal-ctags
   if [ ! -d "$HOME/.ctags" ]; then
@@ -37,8 +37,8 @@ elif [[ "$OSTYPE" == "darwin"*  ]]; then
     brew install fd
   fi
 
-  if ! type "ag" > /dev/null; then
-    brew install the_silver_searcher
+  if ! type "rg" > /dev/null; then
+    brew install ripgrep
   fi
 
   if ! type "ctags" > /dev/null; then
