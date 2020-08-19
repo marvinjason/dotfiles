@@ -9,22 +9,20 @@ NC='\033[0m'
 
 echo -e "${C}Removing everything...${NC}"
 
-# Change default shell to bash
-if [ "$SHELL" != "/bin/bash" ]; then
-  chsh -s /bin/bash
-fi
-
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  # Remove zsh
-  sudo apt-get -y remove zsh
+  if type "zsh" > /dev/null; then
+    sudo apt-get -y remove zsh
+  fi
 
-  # Remove fd
-  sudo dpkg --purge fd-musl
+  if type "fd" > /dev/null; then
+    sudo dpkg --purge fd-musl
+  fi
 
-  # Remove ripgrep
-  sudo apt-get -y remove ripgrep
+  if type "rg" > /dev/null; then
+    sudo apt-get -y remove ripgrep
+  fi
 
-  # Remove universal-ctags
+  # Remove universal-ctags if present
   if [ -d "$HOME/.ctags" ]; then
     # Apparently, this command is not a thing.
     # Maybe nuking the directory is enough?
@@ -53,6 +51,11 @@ fi
 # Remove oh-my-zsh if present
 if [ -d "$HOME/.oh-my-zsh" ]; then
   rm ~/.oh-my-zsh -rf
+fi
+
+# Change default shell to bash
+if [ "$SHELL" != "/bin/bash" ]; then
+  chsh -s /bin/bash
 fi
 
 # Delete symlinks

@@ -10,17 +10,22 @@ NC='\033[0m'
 echo -e "${C}Setting everything up...${NC}"
 
 if [[ "$OSTYPE" == "linux-gnu" ]]; then
-  sudo apt-get -y install zsh
+  if ! type "zsh" > /dev/null; then
+    sudo apt-get -y install zsh
+  fi
 
-  # Install fd
-  TEMP_DEB="$(mktemp)" &&
-  wget -O "$TEMP_DEB" 'https://github.com/sharkdp/fd/releases/download/v7.1.0/fd-musl_7.1.0_amd64.deb' &&
-  sudo dpkg -i "$TEMP_DEB"
-  rm -f "$TEMP_DEB"
+  if ! type "fd" > /dev/null; then
+    TEMP_DEB="$(mktemp)" &&
+    wget -O "$TEMP_DEB" 'https://github.com/sharkdp/fd/releases/download/v7.1.0/fd-musl_7.1.0_amd64.deb' &&
+    sudo dpkg -i "$TEMP_DEB"
+    rm -f "$TEMP_DEB"
+  fi
 
-  sudo apt-get -y install ripgrep
+  if ! type "rg" > /dev/null; then
+    sudo apt-get -y install ripgrep
+  fi
 
-  # Install universal-ctags
+  # Install universal-ctags if not present
   if [ ! -d "$HOME/.ctags" ]; then
     git clone https://github.com/universal-ctags/ctags.git ~/.ctags &&
     ~/.ctags/autogen.sh &&
