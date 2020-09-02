@@ -39,6 +39,7 @@ set noswapfile
 set nowrap
 set number
 set shiftwidth=2
+set signcolumn=number
 set tabstop=2
 
 set listchars=""                  " Reset the listchars
