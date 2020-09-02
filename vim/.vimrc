@@ -65,6 +65,7 @@ function! FilePath()
 endfunction
 
 let g:lightline = {
+      \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'paste', 'gitbranch' ],
       \             [ 'readonly', 'filepath', 'modified' ] ]
