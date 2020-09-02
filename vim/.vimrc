@@ -5,7 +5,6 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" vim-plug plugins go in here
 call plug#begin('~/.vim/plugged')
 
 Plug 'andymass/vim-matchup'
@@ -29,20 +28,13 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 set backspace=indent,eol,start
-
-" Need to use vim 8.1+ because https://github.com/vim/vim/issues/2584
-" set cursorline
-
 set encoding=utf-8
 set expandtab
 set hidden
 set hlsearch
 set incsearch
+set laststatus=2
 set list
-" set listchars=tab:»·
-" set listchars+=trail:·
-" set listchars+=extends:»
-" set listchars+=precedes:«
 set noswapfile
 set nowrap
 set number
@@ -56,9 +48,6 @@ set listchars+=extends:>          " The character to show in the last column whe
 " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the last column when wrap is
 " off and the line continues beyond the left of the screen
-
-" vim status line
-set laststatus=2
 
 function! FilePath()
   return expand('%') !=# '' ? expand('%') : '[No Name]'
@@ -88,9 +77,6 @@ nnoremap <C-l> <C-w>l
 
 " Hide highlighting of current search results
 nnoremap <silent> <CR> :nohlsearch<CR>
-
-" Open current file in default application
-nnoremap <C-z> :!xdg-open %
 
 " nerdtree config
 map <C-n> :NERDTreeToggle<CR>
@@ -166,7 +152,6 @@ function! s:btags()
 endfunction
 
 command! BTags call s:btags()
-
 nnoremap <C-b> :BTags<CR>
 
 " Prepend rubocop linter and fixer with 'bundle exec'
