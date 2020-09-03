@@ -54,11 +54,18 @@ function! FilePath()
   return expand('%') !=# '' ? expand('%') : '[No Name]'
 endfunction
 
+function! GetCWD()
+  return fnamemodify(getcwd(), ':t')
+endfunction
+
 let g:lightline = {
       \ 'colorscheme': 'onedark',
       \ 'active': {
       \   'left': [ [ 'paste', 'gitbranch' ],
-      \             [ 'readonly', 'filepath', 'modified' ] ]
+      \             [ 'readonly', 'filepath', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'cwd', 'fileformat', 'fileencoding', 'filetype' ] ]
       \ },
       \ 'inactive': {
       \   'left': [ [ 'paste', 'gitbranch' ],
@@ -66,7 +73,8 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'gitbranch': 'fugitive#head',
-      \   'filepath': 'FilePath'
+      \   'filepath': 'FilePath',
+      \   'cwd': 'GetCWD'
       \ }
       \ }
 
