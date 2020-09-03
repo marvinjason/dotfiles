@@ -8,7 +8,6 @@ endif
 call plug#begin('~/.vim/plugged')
 
 Plug 'andymass/vim-matchup'
-Plug 'christoomey/vim-system-copy'
 Plug 'dense-analysis/ale'
 Plug 'jiangmiao/auto-pairs'
 Plug 'joshdick/onedark.vim'
@@ -28,6 +27,7 @@ Plug 'tpope/vim-surround'
 call plug#end()
 
 set backspace=indent,eol,start
+set clipboard^=unnamed,unnamedplus
 set encoding=utf-8
 set expandtab
 set hidden
