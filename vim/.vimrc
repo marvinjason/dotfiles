@@ -84,6 +84,9 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
+" Jump to tag in vertical split
+nnoremap <silent> <C-w>} :vert stjump<CR>
+
 " Hide highlighting of current search results
 nnoremap <silent> <CR> :nohlsearch<CR>
 
