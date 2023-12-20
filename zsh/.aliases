@@ -4,3 +4,31 @@ alias gp='ggpush'
 
 # Custom rails command
 alias rails-kill='kill -9 $(lsof -ti tcp:3000)'
+
+# Brandslisten helpers
+alias bl='cd ~/brandslisten/bl'
+alias bl-up='docker container kill b34e553b98d0; docker-compose -f ~/brandslisten/docker-compose-local-setup/docker-compose.yml up'
+alias docker-swagger='docker run -p 3000:8080 -e SWAGGER_JSON=/tmp/swagger.yaml -v ~/brandslisten/api-swagger:/tmp swaggerapi/swagger-ui'
+
+# Morphosis helpers
+alias mops='cd ~/morphosis/morphosis-ops'
+alias mops-up='docker-compose -f ~/morphosis/morphosis-ops/docker-compose.yml up'
+alias tmt='cd ~/morphosis/tmt'
+alias tmt-console='docker-compose exec web rails c'
+alias tmt-up='docker-compose -f ~/morphosis/tmt/docker-compose.yml up'
+alias ssa='cd ~/morphosis/so-syncd-server'
+alias aware='cd ~/morphosis/eight-aware'
+alias aware-up='docker-compose -f ~/morphosis/eight-aware/docker-compose.yml up'
+
+# Talage helpers
+alias tapi='cd ~/talage/talage-api'
+alias tport='cd ~/talage/agency-portal/vue'
+alias tinsport='cd ~/talage/insurer-portal'
+alias admin='cd ~/talage/administration'
+alias quote='cd ~/talage/quote-app-v2'
+alias tapi-up='docker-compose -f ~/talage/docker-compose.yml up'
+alias tapi-console='docker-compose -f ~/talage/docker-compose.yml exec db mongosh devtalageapp --authenticationDatabase "admin" -u admin -p codecoffee99'
+alias tapi-console-insurer='docker-compose -f ~/talage/docker-compose.yml exec db mongosh devinsurerdb --authenticationDatabase "admin" -u admin -p codecoffee99'
+
+# WSL2 helpers
+alias downloads_path='/mnt/c/Users/marvi/Downloads'
